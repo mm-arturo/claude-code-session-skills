@@ -39,8 +39,15 @@ against, which is why each one is written as a list of the phrases people actual
 At the end of a session `wrap-up` does not only commit. It asks what this session taught you
 that a future session would otherwise re-learn the hard way — a flag that does not work on
 Windows, an assumption you had to abandon, a workaround that cost an hour — and routes each item
-to a permanent home: project `CLAUDE.md`, global `~/.claude/CLAUDE.md`, or the skill whose
-procedure was wrong. It lists exactly what it wrote so you can veto before it commits.
+to a permanent home. The skill that runs that work comes first, then a rule skill, memory or the
+handoff; the always-loaded `CLAUDE.md` files come last and get only one short line that points
+to the full lesson. Every character in them is paid for in every session.
+
+It also keeps those files from growing back. It corrects stale lines instead of adding new ones,
+measures each always-loaded file before and after, and moves stories and dates out to the skill
+that owns them. It never deletes knowledge to save space, and a one-line rule leaves `CLAUDE.md`
+only with your yes. It lists what it wrote, moved or retired, with the sizes, so you can veto
+before it commits.
 
 At the start of the next session `resume-work` reads `HANDOFF.md`, then checks it against
 `git log` and `git status` — and **trusts the repo when they disagree**, saying exactly what
